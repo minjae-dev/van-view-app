@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Van View 앱에서 현재 위치를 사용하여 근처의 정보를 제공합니다.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Van View 앱에서 현재 위치를 사용하여 근처의 정보를 제공합니다.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Van View 앱에서 현재 위치를 사용하여 근처의 정보를 제공합니다.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Van View 앱에서 현재 위치를 사용하여 근처의 정보를 제공합니다.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -45,5 +53,16 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.example.vanViewApp.googlesignin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.660549205762-iectkjs803ttc6uvk5v1steedijo4p2i</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
