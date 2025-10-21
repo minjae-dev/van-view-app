@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:van_view_app/core/services/auth_services.dart';
 
 class AppNav extends StatefulWidget implements PreferredSizeWidget {
   final Text title;
@@ -25,8 +26,11 @@ class _AppNavState extends State<AppNav> {
         backgroundColor: Theme.of(context).primaryColor,
         surfaceTintColor: Colors.transparent,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
+          icon: const Icon(Icons.logout),
+          onPressed: () async {
+            Navigator.of(context).pushNamed('/login');
+            return await AuthService().logout();
+          },
         ),
         title: Text(
           widget.title.data!,

@@ -31,6 +31,8 @@ class AppTextStyles {
   );
   static const TextStyle body = TextStyle(fontSize: 16);
   static const TextStyle caption = TextStyle(fontSize: 12, color: Colors.grey);
+
+  static TextStyle? get button => TextStyle(fontSize: 12, color: Colors.black);
 }
 
 class AppIconSizes {

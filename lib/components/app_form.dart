@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:van_view_app/components/app_button.dart';
 
 class AppForm extends StatefulWidget {
   final TextEditingController firstInputController;
   final TextEditingController secondInputController;
-  final VoidCallback onSubmit;
   final String buttonText;
   final String? firstInputLabel;
   final String? secondInputLabel;
@@ -15,7 +13,6 @@ class AppForm extends StatefulWidget {
     super.key,
     required this.firstInputController,
     required this.secondInputController,
-    required this.onSubmit,
     required this.buttonText,
     this.firstInputLabel,
     this.secondInputLabel,
@@ -54,13 +51,6 @@ class _AppFormState extends State<AppForm> {
           obscureText: true,
         ),
         SizedBox(height: 30),
-        AppButton(
-          text: widget.buttonText,
-          onPressed: widget.onSubmit,
-          backgroundColor: Theme.of(context).colorScheme.primary,
-          foregroundColor: Colors.white,
-        ),
-        SizedBox(height: 20),
       ],
     );
   }

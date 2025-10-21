@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: AppRoute.router,
-      title: 'Van-view Demo',
+      title: 'Van-view App',
       theme: ThemeData(
         useMaterial3: true,
         textTheme: const TextTheme(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:van_view_app/components/app_form.dart';
+import 'package:van_view_app/components/button/my_button.dart';
 import 'package:van_view_app/core/services/auth_services.dart';
 import 'package:van_view_app/themes/styles.dart';
 
@@ -91,46 +92,54 @@ class _LoginPageState extends State<LoginPage> {
             AppForm(
               firstInputController: _emailController,
               secondInputController: _passwordController,
-              onSubmit: _login,
               buttonText: '로그인',
               firstInputIcon: const Icon(Icons.email),
               secondInputIcon: const Icon(Icons.lock),
               firstInputLabel: '이메일',
               secondInputLabel: '비밀번호',
             ),
-
-            SizedBox(
-              width: double.infinity,
-              height: 50,
-              child: ElevatedButton.icon(
-                onPressed: _isGoogleLoading ? null : _googleLogin,
-                icon: _isGoogleLoading
-                    ? const SizedBox(
-                        width: 16,
-                        height: 16,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 2,
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            Colors.white,
-                          ),
-                        ),
-                      )
-                    : Image.asset(
-                        'assets/images/google.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                label: Text(_isGoogleLoading ? '로그인 중...' : '구글 로그인'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context).colorScheme.onPrimary,
-                  foregroundColor: Theme.of(context).colorScheme.onSurface,
-                ),
-              ),
-            ),
-
+            _buildButton(),
             TextButton(onPressed: () {}, child: const Text('계정이 없으신가요? 회원가입')),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildButton() {
+    return ButtonTheme(
+      height: 50,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          MyButton(
+            image: Icon(Icons.email, size: 24),
+            text: Text('Login with Email', style: AppTextStyles.button),
+            color: Theme.of(context).colorScheme.onPrimary,
+            radius: 4.0,
+            onPressed: () => _login(),
+          ),
+          SizedBox(height: 10),
+          MyButton(
+            image: Image.asset('assets/images/glogo.png'),
+            text: Text('Login With Google', style: AppTextStyles.button),
+            color: Theme.of(context).colorScheme.onPrimary,
+            radius: 4.0,
+            onPressed: _isGoogleLoading ? null : () => _googleLogin(),
+          ),
+          SizedBox(height: 10),
+          MyButton(
+            image: Image.asset('assets/images/flogo.png'),
+            text: Text('Login With Facebook', style: AppTextStyles.button),
+            color: Color(0xFF1877F2),
+            radius: 4.0,
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Facebook 로그인은 아직 지원되지 않습니다.')),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
