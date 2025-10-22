@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "303749935479",
+    "project_id": "van-view-3c2dc",
+    "storage_bucket": "van-view-3c2dc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303749935479:android:194cb612c5a97e54a93172",
+        "android_client_info": {
+          "package_name": "com.example.van_view_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv0Zju3LlSp3b6C2B9V7bPvK9JUwbjP6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

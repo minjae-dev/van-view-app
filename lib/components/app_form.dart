@@ -32,6 +32,7 @@ class _AppFormState extends State<AppForm> {
       children: [
         SizedBox(height: 40),
         TextField(
+          key: const ValueKey('firstInput'),
           controller: widget.firstInputController,
           decoration: InputDecoration(
             labelText: widget.firstInputLabel,
@@ -42,6 +43,7 @@ class _AppFormState extends State<AppForm> {
         ),
         SizedBox(height: 20),
         TextField(
+          key: const ValueKey('secondInput'), 
           controller: widget.secondInputController,
           decoration: InputDecoration(
             labelText: widget.secondInputLabel,

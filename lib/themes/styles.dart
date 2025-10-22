@@ -8,6 +8,7 @@ class AppColors {
   static const Color background = Color(0xFFF5F5F5);
   static const Color onPrimary = Colors.white;
   static const Color onBackground = Colors.black;
+  static const Color accent = Color(0xFFFFC107);
 }
 
 class AppPaddings {

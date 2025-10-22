@@ -113,9 +113,9 @@ class _LoginPageState extends State<LoginPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           MyButton(
-            image: Icon(Icons.email, size: 24),
+            image: Icon(Icons.email, size: 24, color: Colors.white),
             text: Text('Login with Email', style: AppTextStyles.button),
-            color: Theme.of(context).colorScheme.onPrimary,
+            color: Theme.of(context).colorScheme.primary,
             radius: 4.0,
             onPressed: () => _login(),
           ),
