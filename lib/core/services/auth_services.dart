@@ -54,6 +54,31 @@ class AuthService {
     }
   }
 
+  // 회원가입
+  Future<Map<String, dynamic>?> signup(
+    String email,
+    String password,
+    String name,
+  ) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/auth/mobile-signup'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({'email': email, 'password': password, 'name': name}),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        final data = json.decode(response.body);
+        await saveToken(data['token']);
+        return data;
+      }
+      return null;
+    } catch (e) {
+      debugPrint('Signup error: $e');
+      return null;
+    }
+  }
+
   // 인증 상태 확인
   Future<bool> checkAuthStatus() async {
     try {

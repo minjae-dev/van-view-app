@@ -11,7 +11,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  // Google Sign-In 초기화
   await AuthService().initializeGoogleSignIn();
   runApp(const MyApp());
 }

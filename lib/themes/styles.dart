@@ -9,6 +9,7 @@ class AppColors {
   static const Color onPrimary = Colors.white;
   static const Color onBackground = Colors.black;
   static const Color accent = Color(0xFFFFC107);
+  static const Color inActive = Color(0xFF9E9E9E);
 }
 
 class AppPaddings {
